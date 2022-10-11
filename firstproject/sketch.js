@@ -7,7 +7,7 @@
 let img;
 let x = 600;
 let y = 400;
-let r = random();
+let r;
 
 function preload() {
   img = loadImage("snakebackground.jpg");
@@ -15,11 +15,11 @@ function preload() {
 
 function setup() {
   createCanvas(x, y);
-  imageMode(CENTER);
+  // imageMode(CENTER);
 }
 
 function draw() {
-  background(img);
+  image(img, 0, 0, width, height);
   createApple(50,50);
 }
 
