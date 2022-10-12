@@ -3,33 +3,37 @@
 // 10/4/22
 //
 // Extra for Experts:
-// - describe what you did to take this project "above and beyond"
+// [I created my own shape (the apple)
 let img;
-let x = 600;
-let y = 400;
-let r;
+let Fruit;
+let x = random(width);
+let y = random(height);
 
+// calls the image and loads it into the functions
 function preload() {
   img = loadImage("snakebackground.jpg");
 }
 
 function setup() {
-  createCanvas(x, y);
-  // imageMode(CENTER);
+  createCanvas(600, 400);
+
+}
+// sets image as background and runs the apple function
+function draw() {
+  image(img, 0, 0, 600, 400);
+  createApple();
 }
 
-function draw() {
-  image(img, 0, 0, width, height);
-  createApple(50,50);
-}
 
 function createApple() {
-  // creates the circle for the apple outlines it in black and makes it red
+  // creates the circle for the apple outlines it in black and makes it red=
+  let x = random(height);
+  let y = random(width);
   stroke("black");
   strokeWeight(1);
   push();
+  //translate(random(height)(width));
   fill(200, 50, 50);
-  translate(100,100);
   ellipseMode(CENTER);
   ellipse(0, 0, 40, 35);
   // turns stem brown
@@ -44,4 +48,5 @@ function createApple() {
   ellipse(5, -25, 15, 25);
   pop();
 }
+
 
