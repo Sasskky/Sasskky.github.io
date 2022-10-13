@@ -6,8 +6,8 @@
 // [I created my own shape (the apple)
 let img;
 let Fruit;
-let x = random(width);
-let y = random(height);
+let x;
+let y;
 
 // calls the image and loads it into the functions
 function preload() {
@@ -16,7 +16,8 @@ function preload() {
 
 function setup() {
   createCanvas(600, 400);
-
+  x = random(width, 40, 550);
+  y = random(height, 45, 350);
 }
 // sets image as background and runs the apple function
 function draw() {
@@ -27,12 +28,10 @@ function draw() {
 
 function createApple() {
   // creates the circle for the apple outlines it in black and makes it red=
-  let x = random(height);
-  let y = random(width);
   stroke("black");
   strokeWeight(1);
   push();
-  //translate(random(height)(width));
+  translate(x, y);
   fill(200, 50, 50);
   ellipseMode(CENTER);
   ellipse(0, 0, 40, 35);
@@ -49,4 +48,7 @@ function createApple() {
   pop();
 }
 
+function createDude() {
+
+}
 
