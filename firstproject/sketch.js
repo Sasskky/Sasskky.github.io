@@ -45,11 +45,11 @@ function draw() {
     print("colliding?", hit);
 
     if (hit === true) {
-      "state" === "end";
-      if (state === "end") {
-        image(img2, 0, 0, 600, 400);
-      }
+      state = "end";
     }
+  }
+  if (state === "end") {
+    image(img2, 0, 0, 600, 400);
   }
 }
 // creates moused pressed function
