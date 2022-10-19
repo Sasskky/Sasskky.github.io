@@ -39,15 +39,16 @@ function draw() {
     createCircle();
     text("Go get the apple!", 100, 450);
     point(x, y);
-  
+    // if circle hits apple then return hit
     hit = collidePointCircle(x, y, x2, y2, 30);
     stroke(hit ? color("red") : 0);
     print("colliding?", hit);
-
+    // sets the end state
     if (hit === true) {
       state = "end";
     }
   }
+  // sets image to game over if the end state is set
   if (state === "end") {
     image(img2, 0, 0, 600, 400);
   }
