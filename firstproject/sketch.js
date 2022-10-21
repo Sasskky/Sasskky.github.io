@@ -59,6 +59,7 @@ function mousePressed() {
     state = "main";
   }
 }
+
 //creates text box and turns it gray if mouse hovers over it
 function startScreen() {
   if (mouseInsideRect(400, 700, 400, 550)) {
@@ -72,6 +73,7 @@ function startScreen() {
   textSize(50);
   text("Start!", 480, 490);
 }
+
 // If mouse is clicked in rect starts game
 function mouseInsideRect(left, right, top, bottom) {
   return mouseX >= left && mouseX <= right &&
