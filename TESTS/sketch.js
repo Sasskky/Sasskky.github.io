@@ -14,8 +14,8 @@ function draw() {
   background("white");
 }
 
-let i = 100;
-while (i > 0) {
-  line(i, i*2, width, height);
-  i -= 10;
-}
+let people = ["Ali", "Samin", "Blake", "Athiela", "Monica"];
+let otherPeople = [...people];
+otherPeople[0] = "Vrajesh";
+otherPeople[2] = "Hannah";
+console.log(people[2]);

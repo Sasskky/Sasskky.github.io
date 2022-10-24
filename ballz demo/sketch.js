@@ -1,34 +1,36 @@
 // oct 19th demo
 // Brophy
 
-let x;
-let y;
-let radius;
-let time = 0;
 
-function keyPressed() {
-  let ball = {
-    x: random(width),
-    y: ramdom(height),
-    radius: random(50, 100),
-   time: ramdom(5000),
-  };
-  allCircles.push
+let theCircles = [];
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
-  x = width/2;
-  y = height/2;
-  radius = 75;
 }
 
 function draw() {
-  background(220);
-  fill("black");
-  x = noise(time) * width;
-  y = noise(time + 5000) * height;
+  background(0);
+  displayCircles();
+}
 
-  // increase time along noise
-  time += 0.01;
-  circle(x, y, radius*2);
+function mousePressed() {
+  spawnCircle();
+}
+
+function displayCircles() {
+  for (let i = 0; i < theCircles.length; i++) {
+    noStroke();
+    fill(theCircles[i].theColor);
+    circle(theCircles[i].x, theCircles[i].y, theCircles[i].radius*2);
+  }
+}
+
+function spawnCircle() {
+  let thisCircle = {
+    x: mouseX,
+    y: mouseY,
+    radius: random(25, 75),
+    theColor: color(random(255), random(255), random(255), random(255)),
+  };
+  theCircles.push(thisCircle);
 }
