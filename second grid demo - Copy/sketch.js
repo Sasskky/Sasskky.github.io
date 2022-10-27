@@ -32,25 +32,25 @@ function keyPressed() {
 function takeTurn(grid) {
   let nextTurn = create2dArray(COLS, ROWS);
 
-  for (let y = 0; y<ROWS; y++) {
-    for (let x = 0; x<COLS; x++) {
+  for (let y=0; y<ROWS; y++) {
+    for (let x=0; x<COLS; x++) {
       let neighbours = 0;
 
-      // look at all cells around this one
+      //look at all cells around this one...
       for (let i=-1; i<=1; i++) {
-        for (let j = -1; j<= 1; j++) {
-          // edge case check
+        for (let j=-1; j<=1; j++) {
+          //edge case check
           if (y+i >= 0 && y+i < ROWS && x+j >= 0 && x+j < COLS) {
             neighbours += grid[y+i][x+j];
           }
         }
       }
-      
-      // don't count self!
+
+      //don't count self!
       neighbours -= grid[y][x];
 
-      // apply rules
-      if (grid[y][x] === 1) { // alive
+      //apply rules
+      if (grid[y][x] === 1) { //alive
         if (neighbours === 2 || neighbours === 3) {
           nextTurn[y][x] = 1;
         }
@@ -59,7 +59,7 @@ function takeTurn(grid) {
         }
       }
 
-      if (grid[y][x] === 0) { // dead
+      if (grid[y][x] === 0) { //dead
         if (neighbours === 3) {
           nextTurn[y][x] = 1;
         }
@@ -69,7 +69,7 @@ function takeTurn(grid) {
       }
     }
   }
-  
+
   return nextTurn;
 }
 
