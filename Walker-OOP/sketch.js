@@ -34,8 +34,10 @@ class Walker {
       this.x += this.speed;
     }
     else {
-   //left
-    this.x -+ this.speed;      
+      //left
+      this.x -= this.speed;      
+    }
+
   }
 }
 
@@ -48,7 +50,7 @@ function setup() {
   michael = new Walker(width/2, height/2);
   katherine = new Walker(200, 300);
   katherine.color = "blue";
-  joe = new Walker (400,400);
+  joe = new Walker(1600,800);
   joe.color = "green";
 }
 
